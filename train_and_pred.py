@@ -106,10 +106,10 @@ traindf = pd.get_dummies(traindf, columns=['Month','Dist_bin', 'Carrier_Bin', 'D
 
 print(traindf.head())
 # Теперь наш датасет готов к обработке
-#sns.heatmap(traindf.corr(),annot=True,cmap='RdYlGn',linewidths=0.2) #data.corr()-->correlation matrix
-#fig=plt.gcf()
-#fig.set_size_inches(20,12)
-#plt.show()
+sns.heatmap(traindf.corr(),annot=True,cmap='RdYlGn',linewidths=0.2) #data.corr()-->correlation matrix
+fig=plt.gcf()
+fig.set_size_inches(20,12)
+plt.show()
 
 all_features = traindf.drop("dep_delayed_15min",axis=1)
 Targeted_feature = traindf["dep_delayed_15min"]
